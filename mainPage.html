@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-header">
+      <h1 class="page-heading">Address Book</h1>
+    </div>
+    <div class="page-navigators">
+      <ul class="navigator-items">
+        <li class="navigator-item">Home</li>
+        <li class="navigator-item">
+          <a href="#" onclick="displayForm()" class="add-link">+Add</a>
+        </li>
+        <img class="nav-blog-image" src="blog-icon.png" alt="blog image" />
+      </ul>
+    </div>
+    <div class="main-body">
+      <p class="contact">Contact</p>
+      <div id="left-body"></div>
+      <div class="right-body" id="full-details">
+        <div class="edit-delete">
+            <img src="edit1.jpg" alt="edit" class="edit-icon"><a href="#" class="edit-text" onclick="editContact()">Edit</a>
+            <img src="delete1.png" alt="delete" class="delete-icon"><a href="#" class='delete-text' onclick='deleteContact()'>Delete</a>
+          </div>
+          <div class="full-details">
+            <p id='right-name'></p>
+           <div class="email-set"> <p id='email-label'>Email Id :</p><p id='right-email'></p></div>
+            <div class='mobile-set'><p id='mobile-number-label'>Mobile Number :</p><p id='right-mobile'></p></div>
+            <div class='landline-set'><p id='landline-label'>Landline : </p><p id='right-landline'></p></div>
+            <div class='website-set'><p id='website-label'>Website :</p><p id='right-website'></p></div>
+            <div class='address-set'><p id='address-label'>Address :</p><p id='right-address'></p></div>
+          </div>
+      </div>
+      <form class="add-contact-form" id="form">
+        <div class="form-items">
+          <label for="name">Name</label><span id="name-field-check" class="validations">*</span><br/>
+          <input type="text" id="name" name="name"/><br/>
+          <label for="email">Email</label><span id="email-field-check" class="validations">*</span><br />
+          <input type="text" id="email" name="email"  onkeyup="validateEmailId()"/><br />
+          <div class="contact-labels">
+            <label for="mobile">Mobile</label><span id="mobile-field-check" class="validations">*</span>
+            <label for="landline">Landline</label><span id="landline-check" class="validations"></span>
+          </div>
+          <div class="contact-inputs">
+            <input type="text" id="mobile" name="mobile" onblur="validateMobileNumber()"/>
+            <input type="text" id="landline" name="landline" onblur="validateLandline()"/>
+          </div>
+          <label for="website">Website</label><span id="website-check" class="validations">*</span> <br />
+          <input type="text" id="website" name="website" onkeyup="validateWebsite()"/><br />
+          <label for="address">Address</label><br/>
+          <textarea id="address" name="address" rows="8"></textarea><br />
+          <button id="add-button" class="add-details" onclick="groupFormData(this.id)">Add</button>
+        </div>
+      </form>
+    </div>
+    <script src="typescript.js"></script>
+  </body>
+</html>
